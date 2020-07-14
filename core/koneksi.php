@@ -10,7 +10,7 @@ class koneksi
     protected $server   = "localhost";
     protected $username ="root";
     protected $password = "";
-    protected $db = "jurnal_asm";
+    protected $db = "jurnal";
     public function __construct()
     {
         $koneksi = mysqli_connect($this->server, $this->username, $this->password, $this->db);

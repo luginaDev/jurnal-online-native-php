@@ -1,251 +1,44 @@
-	<?php include"header.php"; ?>
+	<?php 
+	include 'core/JurnalController.php';
+	include"header.php";
+	$data = new JurnalController;
+	$collection = $data->index('jurnal');
+
+	 ?>
 	<!-- Blog Page Grid Area Start -->
 	<section class="blog-page single-blog-area">
-		<div class="container">
+		<div class="container"> 
 			<div class="row">
-				<div class="col-lg-4 col-md-6">
+				<?php foreach ($collection as $value): ?>
+					<div class="col-lg-4 col-md-6">
 					<div class="single-blog">
 						<div class="img">
-							<img src="assets/images/blog/img1.png" alt="">
+							<img src="assets/images/blog/img1.png" alt="<?= $value['slug'] ?>">
 						</div>
 						<div class="content">
 							<ul class="top-meta">
 								<li>
 									<p class="date">
-										21 Aug, 2019
+										Print ISSN : <?= $value['printissn'] ?>
 									</p>
 								</li>
 								<li>
 									<p class="post-by">
-										By, Admin
+										 e-ISSN : <?= $value['eissn'] ?>
 									</p>
 								</li>
 							</ul>
-							<a href="blog-details.html">
+							<a href="jurnal_detail.php?slug=<?= $value['slug'] ?>">
 								<h4 class="title">
-									5 reasons why your website 
-									needs more whitespace
+									<?= $value['judul']  ?>
 								</h4>
 							</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-blog">
-						<div class="img">
-							<img src="assets/images/blog/img2.png" alt="">
-						</div>
-						<div class="content">
-							<ul class="top-meta">
-								<li>
-									<p class="date">
-										21 Aug, 2019
-									</p>
-								</li>
-								<li>
-									<p class="post-by">
-										By, Admin
-									</p>
-								</li>
-							</ul>
-							<a href="blog-details.html">
-								<h4 class="title">
-									7 steps to optimize your 
-									website for Millennials										
-								</h4>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-blog">
-						<div class="img">
-							<img src="assets/images/blog/img3.png" alt="">
-						</div>
-						<div class="content">
-							<ul class="top-meta">
-								<li>
-									<p class="date">
-										21 Aug, 2019
-									</p>
-								</li>
-								<li>
-									<p class="post-by">
-										By, Admin
-									</p>
-								</li>
-							</ul>
-							<a href="blog-details.html">
-								<h4 class="title">
-									8 Things To Know When 
-									Designing Augmented
-								</h4>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-blog">
-						<div class="img">
-							<img src="assets/images/blog/img4.png" alt="">
-						</div>
-						<div class="content">
-							<ul class="top-meta">
-								<li>
-									<p class="date">
-										21 Aug, 2019
-									</p>
-								</li>
-								<li>
-									<p class="post-by">
-										By, Admin
-									</p>
-								</li>
-							</ul>
-							<a href="blog-details.html">
-								<h4 class="title">
-									New Requirements for 2018: Is 
-									Your Website Ready?
-								</h4>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-blog">
-						<div class="img">
-							<img src="assets/images/blog/img5.png" alt="">
-						</div>
-						<div class="content">
-							<ul class="top-meta">
-								<li>
-									<p class="date">
-										21 Aug, 2019
-									</p>
-								</li>
-								<li>
-									<p class="post-by">
-										By, Admin
-									</p>
-								</li>
-							</ul>
-							<a href="blog-details.html">
-								<h4 class="title">
-									A series of iOS 7 inspire 
-									vector Questions Ask icons.
-								</h4>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-blog">
-						<div class="img">
-							<img src="assets/images/blog/img6.png" alt="">
-						</div>
-						<div class="content">
-							<ul class="top-meta">
-								<li>
-									<p class="date">
-										21 Aug, 2019
-									</p>
-								</li>
-								<li>
-									<p class="post-by">
-										By, Admin
-									</p>
-								</li>
-							</ul>
-							<a href="blog-details.html">
-								<h4 class="title">
-									The 5 Real Questions to Ask
-									Potential Web Design Agency
-								</h4>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-blog">
-						<div class="img">
-							<img src="assets/images/blog/img1.png" alt="">
-						</div>
-						<div class="content">
-							<ul class="top-meta">
-								<li>
-									<p class="date">
-										21 Aug, 2019
-									</p>
-								</li>
-								<li>
-									<p class="post-by">
-										By, Admin
-									</p>
-								</li>
-							</ul>
-							<a href="blog-details.html">
-								<h4 class="title">
-									Sed ut perspiciatis unde 
-									omnis iste natus.
-								</h4>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-blog">
-						<div class="img">
-							<img src="assets/images/blog/img2.png" alt="">
-						</div>
-						<div class="content">
-							<ul class="top-meta">
-								<li>
-									<p class="date">
-										21 Aug, 2019
-									</p>
-								</li>
-								<li>
-									<p class="post-by">
-										By, Admin
-									</p>
-								</li>
-							</ul>
-							<a href="blog-details.html">
-								<h4 class="title">
-									6 reasons why your website 
-									needs more whitespace
-								</h4>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-blog">
-						<div class="img">
-							<img src="assets/images/blog/img3.png" alt="">
-						</div>
-						<div class="content">
-							<ul class="top-meta">
-								<li>
-									<p class="date">
-										21 Aug, 2019
-									</p>
-								</li>
-								<li>
-									<p class="post-by">
-										By, Admin
-									</p>
-								</li>
-							</ul>
-							<a href="blog-details.html">
-								<h4 class="title">
-									4 Things To Know When 
-									Designing Augmented
-								</h4>
-							</a>
-						</div>
-					</div>
-				</div>
+				<?php endforeach ?>
+				
+				
 			</div>
 			<div class="row">
 				<div class="col-12 d-flex justify-content-center">
