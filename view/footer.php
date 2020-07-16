@@ -87,7 +87,7 @@
   <script src="assets/js/contact.js"></script>
   <!-- main -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/plugins/dropify/js/dropify.min.js"></script>
+
 </body>
 
 

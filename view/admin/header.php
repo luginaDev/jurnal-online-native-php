@@ -18,6 +18,7 @@
     <link href="../../assets/assets/css/app.css" rel="stylesheet" />
     <link href="../../assets/assets/plugins/dropify/css/dropify.min.css" rel="stylesheet" />
      <link href="../../assets/assets/plugins/simplemde/simplemde.min.css" rel="stylesheet" />
+     <link href="../../assets/assets/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
     <!-- end common css -->
 </head>
 

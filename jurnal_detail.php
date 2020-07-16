@@ -11,6 +11,7 @@ if (isset($_GET['slug'])) {
 	header('location:index.php');
 }
 
+
 ?>
 
 

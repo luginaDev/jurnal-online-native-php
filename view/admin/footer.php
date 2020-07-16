@@ -12,6 +12,11 @@
       <script src="../../assets/assets/js/dropify.js"></script>
       <script src="../../assets/assets/plugins/simplemde/simplemde.min.js"></script>
        <script src="../../assets/assets/js/simplemde.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <?php 
+        include "../../core/alert.php";
+        
+         ?>
 </body>
 
 </html>

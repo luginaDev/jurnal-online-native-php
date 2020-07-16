@@ -53,9 +53,45 @@ class JurnalController  {
 
 	}
 
-	public function create(){
-
+	public function insert($table, $values){
+		global $koneksi;
+		$sql = "INSERT INTO $table VALUES ($values)";
+		$query = mysqli_query($koneksi, $sql);
+		if ($query) {
+				return ['response' => 'positive', 'alert' => 'Berhasil'];
+		}else{
+			return ['response' => 'negative', 'alert' => 'Gagal'];
+		}
 	}
+
+	public function validateFile(){
+	    	global $koneksi;
+	    	$name 		= $_FILES['source']['name'];
+	    	$ukuranFile = $_FILES['source']['size'];
+	    	$error 		= $_FILES['source']['error'];
+	    	$tmpName 	= $_FILES['source']['tmp_name'];
+	    	$folder = '/public';
+	    	$extensiGambar 		= explode('.', $name);
+	    	$namaGambar 		= $extensiGambar[0];
+	    	$ekstensiBelakang 	= strtolower(end($extensiGambar));
+	    	$ekstensi 			= ['pdf'];
+	    	$error 				= array();
+
+	    	if (in_array($ekstensiBelakang, $ekstensi) === false) {
+	            return ['response' => 'negative', 'alert' => 'File hanya boleh menggunakan ekstensi PDF'];
+	        }
+
+	        if ($ukuranFile > 25000000) {
+	            return ['response' => 'negative', 'alert' => 'Ukuran file terlalu besar'];
+	        }
+
+
+	       $rand = rand();
+	       
+	       move_uploaded_file($_FILES['source']['tmp_name'], 'file/'.$rand.'_'.$name);
+
+	        return ['types' => 'true', 'file' => $name];
+	    }
 
 	public function update(){
 
